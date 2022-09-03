@@ -1,3 +1,3 @@
 # Kakao Cloning Update
 
-2022/09/03
+First Commit to create README.md - 2022/09/03
