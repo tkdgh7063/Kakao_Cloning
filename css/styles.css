@@ -12,5 +12,6 @@
 @import "screens/login.css";
 
 body {
+    color: #2e363e;
     font-family: 'Open Sans', sans-serif;
 }
