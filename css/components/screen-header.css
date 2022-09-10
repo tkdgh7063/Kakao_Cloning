@@ -12,6 +12,12 @@
     font-weight: 600;
 }
 
-.screen_header__icons span {
+.screen_header__icons>span {
+    position: relative;
     margin-left: 20px;
+}
+
+.screen_header__icons span:last-child span {
+    left: 15px;
+    top: -3px;
 }
