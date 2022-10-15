@@ -33,6 +33,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 15px;
+    height: 112px;
+}
+
+.open-post:last-child {
+    border-top: var(--gray-border);
+    padding-top: 15px;
 }
 
 .open-post__title {
@@ -41,9 +48,16 @@
 }
 
 .open-post__hashtags {
-    text-transform: uppercase;
     opacity: .6;
     margin-bottom: 7px;
+}
+
+.open-post:nth-child(2) .open-post__hashtags {
+    text-transform: uppercase;
+}
+
+.open-post:last-child .open-post__hashtags {
+    font-size: 14px;
 }
 
 .open-post__members {
