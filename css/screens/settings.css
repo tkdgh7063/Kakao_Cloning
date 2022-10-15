@@ -1,3 +1,42 @@
+#setting-screen {
+    height: 97vh;
+}
+
+#setting-screen .alt-header,
+#setting-screen .status-bar {
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    top: 0px;
+    background-color: white;
+}
+
+#setting-screen .status-bar {
+    z-index: 2;
+}
+
+#setting-screen .alt-header {
+    z-index: 1;
+}
+
+.main-setting {
+    margin-top: 80px;
+}
+
+.settings-list {
+    padding: 0px var(--horizontal-space);
+}
+
+.settings-list:first-child,
+.settings-list:nth-child(2) {
+    margin-bottom: 10px;
+}
+
+.settings-list:nth-child(2),
+.settings-list:last-child {
+    border-top: 1px solid var(--gray);
+}
+
 .settings__setting {
     padding: 20px 0;
     border-bottom: var(--gray-border);
@@ -5,6 +44,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.settings__setting:last-child {
+    border-bottom: none;
 }
 
 .settings__setting i {
