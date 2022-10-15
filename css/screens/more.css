@@ -1,5 +1,14 @@
+.user-component__subtitle i {
+    color: red;
+}
+
 .more-screen .icon-row {
     margin-top: 35px;
+}
+
+.more-screen .icon-row .nav__dot {
+    left: 176px;
+    top: 196px;
 }
 
 .more-suggestions {
