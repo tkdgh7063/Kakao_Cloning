@@ -92,7 +92,7 @@
 
 .reply {
     position: fixed;
-    bottom: 0;
+    bottom: 100px;
     width: 100%;
     background-color: white;
     display: flex;
@@ -130,7 +130,7 @@
 }
 
 .reply__column:last-child > i {
-    top: 10px;
+    top: 17px;
     right: 40px;
 }
 
