@@ -92,7 +92,7 @@
 
 .reply {
     position: fixed;
-    bottom: 100px;
+    bottom: 180px;
     width: 100%;
     background-color: white;
     display: flex;
@@ -149,4 +149,57 @@
 .reply__column button:focus,
 .reply__column button:active {
     outline: none;
+}
+
+.keyboard {
+    width: 100vw;
+    background-color: #D1D4D9;
+    position: fixed;
+    bottom: 0;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.row {
+    width: 100%;
+    text-align: center;
+}
+
+.row span {
+    background-color: white;
+    display: inline-block;
+    height: 35px;
+    width: 24px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 8px 0px 0px 0px;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+
+.row span:not(:last-child) {
+    margin-right: 10px;
+}
+
+.row .gray {
+    background-color: #ABB1BA;
+    width: 45px;
+}
+
+.row .space {
+    width: 130px;
+}
+
+.row .return {
+    width: 80px;
+}
+
+.third span:first-child {
+    margin-right: 12px;
+}
+
+.third span:last-child {
+    margin-left: 2px;
 }
