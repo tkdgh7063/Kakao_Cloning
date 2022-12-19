@@ -6,7 +6,7 @@
 #chat-screen .alt-header,
 #chat-screen .status-bar {
     position: fixed;
-    width: 100%;
+    width: 100vw;
     box-sizing: border-box;
     top: 0px;
     background-color: #abc1d1;
@@ -22,15 +22,11 @@
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: none;
-    }
-    1% {
-        opacity: 0;
+    from {
         transform: translateY(30px);
+        opacity: 0;
     }
-    100% {
+    to {
         transform: none;
         opacity: 1;
     }
@@ -49,17 +45,49 @@
     padding: 8px 15px;
     border-radius: 25px;
     margin-bottom: 25px;
+    animation: fadeIn .8s linear;
 }
 
 .message-row {
     width: 100%;
-    display: flex;
     margin-bottom: 25px;
+    display: flex;
 }
 
-.chat__timestamp,
-.message-row {
-    animation: fadeIn .8s linear;
+@keyframes fadeFromLeft {
+    from {
+        translate: -178px;
+        opacity: 0;
+    }
+    to {
+        translate: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeFromRight {
+    from {
+        translate: 105px;
+        opacity: 0;
+    }
+    to {
+        translate: 0;
+        opacity: 1;
+    }
+}
+
+.message-row:nth-child(2) {
+    translate: -178px;
+    animation: fadeFromLeft .5s ease-in-out forwards;
+    animation-iteration-count: 1;
+    animation-delay: .8s;
+}
+
+.message-row--own {
+    translate: 105px;
+    animation: fadeFromRight .5s ease-in-out forwards;
+    animation-iteration-count: 1;
+    animation-delay: 1.3s;
 }
 
 .message-row img {
@@ -113,13 +141,14 @@
 .reply {
     position: fixed;
     bottom: 180px;
-    width: 100%;
+    width: 100vw;
     background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 25px;
     box-sizing: border-box;
+    transition: all .3s ease-in-out;
 }
 
 .reply .reply__column:first-child {
@@ -137,20 +166,22 @@
 
 .reply input {
     padding: 10px;
-    width: 100%;
+    width: 102%;
     border: var(--gray-border);
     border-radius: 20px;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
 }
 
 .reply__column:last-child > i,
 .reply__column:last-child button {
     position: absolute;
     right: -3px;
-    top: 2px;
+    top: 3px;
 }
 
 .reply__column:last-child > i {
-    top: 17px;
+    top: 18px;
     right: 40px;
 }
 
@@ -171,11 +202,30 @@
     outline: none;
 }
 
+.reply .reply__column:first-child, 
+.reply .fa-face-smile {
+    transition: opacity .3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child, 
+.reply:focus-within .fa-face-smile {
+    opacity: 0;
+}
+
+.reply:focus-within input {
+    width: 98vw;
+    transform: translateX(-13%) translateY(-80px);
+}
+
+.reply:focus-within {
+    transform: translateY(80px);
+}
+
 .keyboard {
-    width: 100%;
+    width: 100vw;
     background-color: #D1D4D9;
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
     height: 180px;
     display: flex;
     flex-direction: column;
